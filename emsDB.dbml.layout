@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 12.875" name="emsDB">
+  <DataContextMoniker Name="/emsDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="7e3df1a6-739d-4ffb-96ef-5b491923e98b" absoluteBounds="0.75, 2, 2, 1.3862939453125003">
+      <DataClassMoniker Name="/emsDBDataContext/CallTypes" />
+      <nestedChildShapes>
+        <elementListCompartment Id="076f0b64-7772-453d-95ba-90f594e05b3c" absoluteBounds="0.765, 2.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="135607db-93bb-4115-a1c1-3d39464b1b8b" absoluteBounds="0.75, 6.875, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/emsDBDataContext/VSAs" />
+      <nestedChildShapes>
+        <elementListCompartment Id="070bc64f-c5ee-41ce-8dff-0a53b15b1b63" absoluteBounds="0.765, 7.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d44c9793-72b9-4642-b68d-05193928f04d" absoluteBounds="0.75, 4.75, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/emsDBDataContext/CTASs" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d2e0cb17-1b9e-4e54-a965-3ccd04ae24e4" absoluteBounds="0.765, 5.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fb8bc910-a21f-457e-b042-d2fbbffc4e0f" absoluteBounds="3.5, 1, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/emsDBDataContext/Entry" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c9bef168-5ef1-47a5-81ab-2ce76af54c77" absoluteBounds="3.515, 1.46, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d432c596-f515-42f5-b975-045d554a3fb7" absoluteBounds="0.75, 9, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/emsDBDataContext/IVAttempts" />
+      <nestedChildShapes>
+        <elementListCompartment Id="51727eea-d049-4327-84a9-a87138d6214d" absoluteBounds="0.765, 9.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="de40b170-dc11-44c6-b1cb-66963ba5e427" absoluteBounds="0.75, 11.25, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/emsDBDataContext/SymptomReliefs" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c0cfb425-45e7-4eaa-91c9-affa5b2bc0c3" absoluteBounds="0.765, 11.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 2.69314697265625); (3.5 : 2.69314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/emsDBDataContext/CallTypes/CallType_Entry" />
+      <nodes>
+        <classShapeMoniker Id="7e3df1a6-739d-4ffb-96ef-5b491923e98b" />
+        <classShapeMoniker Id="fb8bc910-a21f-457e-b042-d2fbbffc4e0f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 5.44314697265625); (3.61978791666667 : 5.44314697265625 : JumpStart); (3.78645458333333 : 5.44314697265625 : JumpEnd); (3.88541416666667 : 5.44314697265625 : JumpStart); (4.05208083333333 : 5.44314697265625 : JumpEnd); (4.5 : 5.44314697265625); (4.5 : 4.30930826822917)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/emsDBDataContext/CTASs/CTASs_Entry" />
+      <nodes>
+        <classShapeMoniker Id="d44c9793-72b9-4642-b68d-05193928f04d" />
+        <classShapeMoniker Id="fb8bc910-a21f-457e-b042-d2fbbffc4e0f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 7.56814697265625); (3.61978791666667 : 7.56814697265625 : JumpStart); (3.78645458333333 : 7.56814697265625 : JumpEnd); (3.9687475 : 7.56814697265625); (3.9687475 : 4.30930826822917)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/emsDBDataContext/VSAs/VSA_Entry" />
+      <nodes>
+        <classShapeMoniker Id="135607db-93bb-4115-a1c1-3d39464b1b8b" />
+        <classShapeMoniker Id="fb8bc910-a21f-457e-b042-d2fbbffc4e0f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 9.69314697265625); (3.61978791666667 : 9.69314697265625 : JumpStart); (3.78645458333333 : 9.69314697265625 : JumpEnd); (5.0312525 : 9.69314697265625); (5.0312525 : 4.30930826822917)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/emsDBDataContext/IVAttempts/IVAttempt_Entry" />
+      <nodes>
+        <classShapeMoniker Id="d432c596-f515-42f5-b975-045d554a3fb7" />
+        <classShapeMoniker Id="fb8bc910-a21f-457e-b042-d2fbbffc4e0f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 11.9431469726562); (3.70312125 : 11.9431469726562); (3.70312125 : 4.30930826822917)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/emsDBDataContext/SymptomReliefs/SymptomRelief_Entry" />
+      <nodes>
+        <classShapeMoniker Id="de40b170-dc11-44c6-b1cb-66963ba5e427" />
+        <classShapeMoniker Id="fb8bc910-a21f-457e-b042-d2fbbffc4e0f" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
