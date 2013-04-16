@@ -22,7 +22,7 @@ namespace EMStats
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="ncems")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="EMStats")]
 	public partial class emsDBDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -127,6 +127,14 @@ namespace EMStats
 				return this.GetTable<SymptomReliefs>();
 			}
 		}
+		
+		public System.Data.Linq.Table<EntryDetail> EntryDetails
+		{
+			get
+			{
+				return this.GetTable<EntryDetail>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CallTypes")]
@@ -221,7 +229,7 @@ namespace EMStats
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CallType_Entry", Storage="_Entries", ThisKey="ID", OtherKey="CallType")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CallTypes_Entry", Storage="_Entries", ThisKey="ID", OtherKey="CallType")]
 		public EntitySet<Entry> Entries
 		{
 			get
@@ -359,7 +367,7 @@ namespace EMStats
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="VSA_Entry", Storage="_Entries", ThisKey="ID", OtherKey="VSA")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="VSAs_Entry", Storage="_Entries", ThisKey="ID", OtherKey="VSA")]
 		public EntitySet<Entry> Entries
 		{
 			get
@@ -907,7 +915,7 @@ namespace EMStats
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CallType_Entry", Storage="_CallTypes", ThisKey="CallType", OtherKey="ID", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CallTypes_Entry", Storage="_CallTypes", ThisKey="CallType", OtherKey="ID", IsForeignKey=true)]
 		public CallTypes CallTypes
 		{
 			get
@@ -975,7 +983,7 @@ namespace EMStats
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="VSA_Entry", Storage="_VSAs", ThisKey="VSA", OtherKey="ID", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="VSAs_Entry", Storage="_VSAs", ThisKey="VSA", OtherKey="ID", IsForeignKey=true)]
 		public VSAs VSAs
 		{
 			get
@@ -1009,7 +1017,7 @@ namespace EMStats
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="IVAttempt_Entry", Storage="_IVAttempts", ThisKey="IVAttempt", OtherKey="ID", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="IVAttempts_Entry", Storage="_IVAttempts", ThisKey="IVAttempt", OtherKey="ID", IsForeignKey=true)]
 		public IVAttempts IVAttempts
 		{
 			get
@@ -1043,7 +1051,7 @@ namespace EMStats
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SymptomRelief_Entry", Storage="_SymptomReliefs", ThisKey="SymptomRelief", OtherKey="ID", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SymptomReliefs_Entry", Storage="_SymptomReliefs", ThisKey="SymptomRelief", OtherKey="ID", IsForeignKey=true)]
 		public SymptomReliefs SymptomReliefs
 		{
 			get
@@ -1190,7 +1198,7 @@ namespace EMStats
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="IVAttempt_Entry", Storage="_Entries", ThisKey="ID", OtherKey="IVAttempt")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="IVAttempts_Entry", Storage="_Entries", ThisKey="ID", OtherKey="IVAttempt")]
 		public EntitySet<Entry> Entries
 		{
 			get
@@ -1328,7 +1336,7 @@ namespace EMStats
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SymptomRelief_Entry", Storage="_Entries", ThisKey="ID", OtherKey="SymptomRelief")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SymptomReliefs_Entry", Storage="_Entries", ThisKey="ID", OtherKey="SymptomRelief")]
 		public EntitySet<Entry> Entries
 		{
 			get
@@ -1371,6 +1379,267 @@ namespace EMStats
 		{
 			this.SendPropertyChanging();
 			entity.SymptomReliefs = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.EntryDetails")]
+	public partial class EntryDetail
+	{
+		
+		private int _ID;
+		
+		private System.DateTime _Date;
+		
+		private string _CallNumber;
+		
+		private System.TimeSpan _T2;
+		
+		private System.TimeSpan _T3;
+		
+		private System.TimeSpan _T4;
+		
+		private string _CTAS;
+		
+		private string _CallType;
+		
+		private string _VSA;
+		
+		private string _SymptomRelief;
+		
+		private string _IVAttempt;
+		
+		private System.DateTime _DateEntered;
+		
+		private string _EnteredBy;
+		
+		private System.Nullable<int> _TDiff;
+		
+		public EntryDetail()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL")]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this._ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="Date NOT NULL")]
+		public System.DateTime Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this._Date = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CallNumber", DbType="NVarChar(8) NOT NULL", CanBeNull=false)]
+		public string CallNumber
+		{
+			get
+			{
+				return this._CallNumber;
+			}
+			set
+			{
+				if ((this._CallNumber != value))
+				{
+					this._CallNumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_T2", DbType="Time NOT NULL")]
+		public System.TimeSpan T2
+		{
+			get
+			{
+				return this._T2;
+			}
+			set
+			{
+				if ((this._T2 != value))
+				{
+					this._T2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_T3", DbType="Time NOT NULL")]
+		public System.TimeSpan T3
+		{
+			get
+			{
+				return this._T3;
+			}
+			set
+			{
+				if ((this._T3 != value))
+				{
+					this._T3 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_T4", DbType="Time NOT NULL")]
+		public System.TimeSpan T4
+		{
+			get
+			{
+				return this._T4;
+			}
+			set
+			{
+				if ((this._T4 != value))
+				{
+					this._T4 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CTAS", DbType="NVarChar(12) NOT NULL", CanBeNull=false)]
+		public string CTAS
+		{
+			get
+			{
+				return this._CTAS;
+			}
+			set
+			{
+				if ((this._CTAS != value))
+				{
+					this._CTAS = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CallType", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string CallType
+		{
+			get
+			{
+				return this._CallType;
+			}
+			set
+			{
+				if ((this._CallType != value))
+				{
+					this._CallType = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VSA", DbType="NVarChar(25) NOT NULL", CanBeNull=false)]
+		public string VSA
+		{
+			get
+			{
+				return this._VSA;
+			}
+			set
+			{
+				if ((this._VSA != value))
+				{
+					this._VSA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SymptomRelief", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string SymptomRelief
+		{
+			get
+			{
+				return this._SymptomRelief;
+			}
+			set
+			{
+				if ((this._SymptomRelief != value))
+				{
+					this._SymptomRelief = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IVAttempt", DbType="NVarChar(25) NOT NULL", CanBeNull=false)]
+		public string IVAttempt
+		{
+			get
+			{
+				return this._IVAttempt;
+			}
+			set
+			{
+				if ((this._IVAttempt != value))
+				{
+					this._IVAttempt = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateEntered", DbType="DateTime NOT NULL")]
+		public System.DateTime DateEntered
+		{
+			get
+			{
+				return this._DateEntered;
+			}
+			set
+			{
+				if ((this._DateEntered != value))
+				{
+					this._DateEntered = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EnteredBy", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string EnteredBy
+		{
+			get
+			{
+				return this._EnteredBy;
+			}
+			set
+			{
+				if ((this._EnteredBy != value))
+				{
+					this._EnteredBy = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TDiff", DbType="Int")]
+		public System.Nullable<int> TDiff
+		{
+			get
+			{
+				return this._TDiff;
+			}
+			set
+			{
+				if ((this._TDiff != value))
+				{
+					this._TDiff = value;
+				}
+			}
 		}
 	}
 }

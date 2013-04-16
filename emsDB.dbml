@@ -1,11 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ncems" Class="emsDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=ncems;Persist Security Info=True;User ID=ncems" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="ncemsConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="EMStats" Class="emsDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=EMStats;Persist Security Info=True;User ID=ncems" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="ncemsConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.CallTypes" Member="CallTypes">
     <Type Name="CallTypes">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Value" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="CallType_Entry" Member="Entries" ThisKey="ID" OtherKey="CallType" Type="Entry" />
+      <Association Name="CallTypes_Entry" Member="Entries" ThisKey="ID" OtherKey="CallType" Type="Entry" />
     </Type>
   </Table>
   <Table Name="dbo.VSAs" Member="VSAs">
@@ -13,7 +13,7 @@
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Value" Type="System.String" DbType="NVarChar(25) NOT NULL" CanBeNull="false" />
       <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="VSA_Entry" Member="Entries" ThisKey="ID" OtherKey="VSA" Type="Entry" />
+      <Association Name="VSAs_Entry" Member="Entries" ThisKey="ID" OtherKey="VSA" Type="Entry" />
     </Type>
   </Table>
   <Table Name="dbo.CTASs" Member="CTASses">
@@ -39,11 +39,11 @@
       <Column Name="IVAttempt" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="DateEntered" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="EnteredBy" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="CallType_Entry" Member="CallTypes" ThisKey="CallType" OtherKey="ID" Type="CallTypes" IsForeignKey="true" />
+      <Association Name="CallTypes_Entry" Member="CallTypes" ThisKey="CallType" OtherKey="ID" Type="CallTypes" IsForeignKey="true" />
       <Association Name="CTASs_Entry" Member="CTASs" ThisKey="CTAS" OtherKey="ID" Type="CTASs" IsForeignKey="true" />
-      <Association Name="VSA_Entry" Member="VSAs" ThisKey="VSA" OtherKey="ID" Type="VSAs" IsForeignKey="true" />
-      <Association Name="IVAttempt_Entry" Member="IVAttempts" ThisKey="IVAttempt" OtherKey="ID" Type="IVAttempts" IsForeignKey="true" />
-      <Association Name="SymptomRelief_Entry" Member="SymptomReliefs" ThisKey="SymptomRelief" OtherKey="ID" Type="SymptomReliefs" IsForeignKey="true" />
+      <Association Name="VSAs_Entry" Member="VSAs" ThisKey="VSA" OtherKey="ID" Type="VSAs" IsForeignKey="true" />
+      <Association Name="IVAttempts_Entry" Member="IVAttempts" ThisKey="IVAttempt" OtherKey="ID" Type="IVAttempts" IsForeignKey="true" />
+      <Association Name="SymptomReliefs_Entry" Member="SymptomReliefs" ThisKey="SymptomRelief" OtherKey="ID" Type="SymptomReliefs" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.IVAttempts" Member="IVAttempts">
@@ -51,7 +51,7 @@
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Value" Type="System.String" DbType="NVarChar(25) NOT NULL" CanBeNull="false" />
       <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="IVAttempt_Entry" Member="Entries" ThisKey="ID" OtherKey="IVAttempt" Type="Entry" />
+      <Association Name="IVAttempts_Entry" Member="Entries" ThisKey="ID" OtherKey="IVAttempt" Type="Entry" />
     </Type>
   </Table>
   <Table Name="dbo.SymptomReliefs" Member="SymptomReliefs">
@@ -59,7 +59,25 @@
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Value" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="SymptomRelief_Entry" Member="Entries" ThisKey="ID" OtherKey="SymptomRelief" Type="Entry" />
+      <Association Name="SymptomReliefs_Entry" Member="Entries" ThisKey="ID" OtherKey="SymptomRelief" Type="Entry" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EntryDetails" Member="EntryDetails">
+    <Type Name="EntryDetail">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="CallNumber" Type="System.String" DbType="NVarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="T2" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="T3" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="T4" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="CTAS" Type="System.String" DbType="NVarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="CallType" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="VSA" Type="System.String" DbType="NVarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="SymptomRelief" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="IVAttempt" Type="System.String" DbType="NVarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="DateEntered" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EnteredBy" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TDiff" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

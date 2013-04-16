@@ -15,31 +15,35 @@ namespace EMStats
             if (!User.IsInRole(System.Configuration.ConfigurationManager.AppSettings["ADSecurityGroup"]))
                 Response.Redirect("AccessDenied.aspx");
 
-            // populate dropdown lists
-            ddCTAS.DataSource = GetCTASs();
-            ddCTAS.DataTextField = "Value";
-            ddCTAS.DataValueField = "ID";
-            ddCTAS.DataBind();
+            if (!Page.IsPostBack)
+            {
 
-            ddCallType.DataSource = GetCallTypes();
-            ddCallType.DataTextField = "Value";
-            ddCallType.DataValueField = "ID";
-            ddCallType.DataBind();
+                // populate dropdown lists
+                ddCTAS.DataSource = GetCTASs();
+                ddCTAS.DataTextField = "Value";
+                ddCTAS.DataValueField = "ID";
+                ddCTAS.DataBind();
 
-            ddVSA.DataSource = GetVSAs();
-            ddVSA.DataTextField = "Value";
-            ddVSA.DataValueField = "ID";
-            ddVSA.DataBind();
+                ddCallType.DataSource = GetCallTypes();
+                ddCallType.DataTextField = "Value";
+                ddCallType.DataValueField = "ID";
+                ddCallType.DataBind();
 
-            ddSymptomRelief.DataSource = GetSymptomReliefs();
-            ddSymptomRelief.DataTextField = "Value";
-            ddSymptomRelief.DataValueField = "ID";
-            ddSymptomRelief.DataBind();
+                ddVSA.DataSource = GetVSAs();
+                ddVSA.DataTextField = "Value";
+                ddVSA.DataValueField = "ID";
+                ddVSA.DataBind();
 
-            ddIVAttempt.DataSource = GetIVAttempts();
-            ddIVAttempt.DataTextField = "Value";
-            ddIVAttempt.DataValueField = "ID";
-            ddIVAttempt.DataBind();
+                ddSymptomRelief.DataSource = GetSymptomReliefs();
+                ddSymptomRelief.DataTextField = "Value";
+                ddSymptomRelief.DataValueField = "ID";
+                ddSymptomRelief.DataBind();
+
+                ddIVAttempt.DataSource = GetIVAttempts();
+                ddIVAttempt.DataTextField = "Value";
+                ddIVAttempt.DataValueField = "ID";
+                ddIVAttempt.DataBind();
+            }
          
         }
 
