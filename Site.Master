@@ -35,6 +35,10 @@
         <div class="navbar-inner">
             <div class="container">
                 <span class="brand">EMStats</span>
+                <div class="nav-collapse collapse pull-right">
+                    <a href="Default.aspx" class="btn"><i class="icon-plus-sign"></i> Add New</a>
+                    <a href="Review.aspx" class="btn"><i class="icon-list"></i> View Calls</a>
+                </div>
             </div>
         </div>
     </div>

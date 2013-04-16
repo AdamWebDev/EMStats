@@ -13,6 +13,15 @@ namespace EMStats {
     public partial class Review {
         
         /// <summary>
+        /// lblMonth control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMonth;
+        
+        /// <summary>
         /// ddMonth control.
         /// </summary>
         /// <remarks>
@@ -20,6 +29,15 @@ namespace EMStats {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddMonth;
+        
+        /// <summary>
+        /// lblYear control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblYear;
         
         /// <summary>
         /// ddYear control.
