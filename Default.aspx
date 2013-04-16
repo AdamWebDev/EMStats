@@ -13,7 +13,7 @@
             <asp:Label ID="lblDate" runat="server" Text="Date (MMDDYYYY)" AssociatedControlID="txtDate"></asp:Label>
             <asp:TextBox ID="txtDate" runat="server" CssClass="date"></asp:TextBox>
             <asp:RequiredFieldValidator ID="reqDate" runat="server" ErrorMessage="Please enter a Date." ControlToValidate="txtDate" Display="Static" CssClass="alert alert-error"></asp:RequiredFieldValidator>
-            <asp:CompareValidator ID="valServerDate" runat="server" ErrorMessage="Please enter a valid date." Type="Date" ControlToValidate="txtDate" Operator="DataTypeCheck" CssClass="alert alert-error" Display="Static"></asp:CompareValidator>
+            <asp:CompareValidator ID="valServerDate" runat="server" ErrorMessage="Please enter a valid date." Type="Date"  ControlToValidate="txtDate" Operator="DataTypeCheck" CssClass="alert alert-error" Display="Static"></asp:CompareValidator>
 
         </div>
         <div class="span6">

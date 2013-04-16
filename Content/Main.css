@@ -32,6 +32,41 @@ label {
     cursor: auto;
 }
 
+.filters {
+    margin-bottom: 1em;
+}
+
+.filters label {
+    display: inline;
+    margin-right: 0.5em;
+    font-weight: bold;
+}
+
+.filters select {
+    margin-bottom: 0;
+    margin-right: 1em;
+}
+
+.review-table tr.details {
+    display:none;
+}
+
+.review-table tr.details ul {
+   -moz-column-count:3; /* Firefox */
+    -webkit-column-count:3; /* Safari and Chrome */
+    column-count:3;
+}
+
+.review-table tr.details span {
+    font-weight: bold;
+}
+
+.review-table .icon-warning-sign {
+    color: red;
+    margin-left: 1em;
+}
+
+
 footer {
     margin-top: 5em;
     text-align: center;

@@ -65,6 +65,26 @@ namespace EMStats
                 Response.Redirect("AccessDenied.aspx");
         }
 
+        protected void rptStats_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            RepeaterItem item = e.Item;
+            if((item.ItemType == ListItemType.Item) || (item.ItemType == ListItemType.AlternatingItem)) 
+            {
+                Literal ltDiff = e.Item.FindControl("rawDiff") as Literal;
+                int seconds = int.Parse(ltDiff.Text);
+                int minutes = seconds / 60;
+
+                Literal ltCTAS = e.Item.FindControl("ltCTAS") as Literal;
+                string CTAS = ltCTAS.Text;
+
+                WarningIcon icon = e.Item.FindControl("WarningIcon") as WarningIcon;
+
+                if (CTAS.Equals("CTAS 5") && minutes > 30)
+                    icon.Visible = true;
+
+            }
+        }
+
         
     }
 

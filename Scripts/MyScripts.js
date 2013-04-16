@@ -33,6 +33,11 @@ jQuery(function ($) {
             $('.timediff').val("");
         }
     });
+
+    $('.showdetails').click(function () {
+        event.preventDefault();
+        $(this).parent().parent().next('tr.details').toggle('fast');
+    });
 });
 
 function CheckTime(sender, args) {
