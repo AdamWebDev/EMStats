@@ -79,7 +79,7 @@ namespace EMStats
 
                 WarningIcon icon = e.Item.FindControl("WarningIcon") as WarningIcon;
 
-                if (CTAS.Equals("CTAS 5") && minutes > 30)
+                if (!CTAS.Equals("CTAS 5") && minutes > 30)
                     icon.Visible = true;
 
             }
