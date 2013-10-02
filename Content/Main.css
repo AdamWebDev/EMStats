@@ -66,6 +66,24 @@ label {
     margin-left: 1em;
 }
 
+.form-group {
+    margin-bottom: 0.5em;
+}
+
+.btn-report {
+    margin-top: 2.5em;
+    margin-left: 3em;
+}
+
+.report-table {
+    margin-top: 2em;
+}
+
+.report-table caption {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: 1em;
+}
 
 footer {
     margin-top: 5em;
