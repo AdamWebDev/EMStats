@@ -38,6 +38,7 @@
                 <div class="nav-collapse collapse pull-right">
                     <a href="Default.aspx" class="btn"><i class="icon-plus-sign"></i> Add New</a>
                     <a href="Review.aspx" class="btn"><i class="icon-list"></i> View Calls</a>
+                    <a href="Reports.aspx" class="btn"><i class="icon-bar-chart"></i> View Reports</a>
                 </div>
             </div>
         </div>
