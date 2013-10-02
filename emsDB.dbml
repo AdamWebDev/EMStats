@@ -70,14 +70,16 @@
       <Column Name="T2" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
       <Column Name="T3" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
       <Column Name="T4" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
-      <Column Name="CTAS" Type="System.String" DbType="NVarChar(12) NOT NULL" CanBeNull="false" />
-      <Column Name="CallType" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="VSA" Type="System.String" DbType="NVarChar(25) NOT NULL" CanBeNull="false" />
-      <Column Name="SymptomRelief" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="IVAttempt" Type="System.String" DbType="NVarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="CTAS" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
+      <Column Name="CallType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VSA" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="SymptomRelief" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IVAttempt" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
       <Column Name="DateEntered" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="EnteredBy" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="TDiff" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CTAS_raw" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VSA_raw" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
 </Database>
