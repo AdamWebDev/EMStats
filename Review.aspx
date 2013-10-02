@@ -8,7 +8,7 @@
     <p>Filter by...</p>
     <div class="filters">
         <asp:Label ID="lblMonth" runat="server" Text="Month:" AssociatedControlID="ddMonth"></asp:Label><asp:DropDownList ID="ddMonth" runat="server" />
-        <asp:Label ID="lblYear" runat="server" Text="Year:" AssociatedControlID="ddYear"></asp:Label><asp:DropDownList ID="ddYear" runat="server" /> <asp:Button ID="btnSubmit" runat="server" Text="Get Entries" CssClass="btn" />
+        <asp:Label ID="lblYear" runat="server" Text="Year:" AssociatedControlID="ddYear"></asp:Label><asp:DropDownList ID="ddYear" runat="server" /> <asp:Button ID="btnSubmit" runat="server" Text="Get Entries" CssClass="btn btn-primary" />
     </div>
     
     <asp:Repeater ID="rptStats" runat="server" Visible="true" OnItemDataBound="rptStats_ItemDataBound">
